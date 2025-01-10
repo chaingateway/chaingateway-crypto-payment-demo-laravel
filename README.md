@@ -1,6 +1,6 @@
 # Laravel Crypto Payments Showcase with Chaingateway API
 
-This project is a **Payment Gateway** built with Laravel, allowing users to pay using **Tron (TRX)** or **USDT (TRC20)**. The gateway uses the **[ChainGateway API](https://chaingateway.io/)** to interact with the blockchain for wallet generation, transaction monitoring, and fund forwarding.
+This project is a **Payment Gateway** built with Laravel, allowing users to pay using **Tron (TRX)** or **USDT (TRC20)**. The gateway uses the **[Chaingateway API](https://chaingateway.io/)** to interact with the blockchain for wallet generation, transaction monitoring, and fund forwarding.
 
 ---
 
@@ -13,27 +13,27 @@ This project is a **Payment Gateway** built with Laravel, allowing users to pay 
 
 ---
 
-## Why Use ChainGateway?
+## Why Use Chaingateway?
 
-**[ChainGateway](https://chaingateway.io/)** makes blockchain integrations seamless by providing a powerful and reliable API for:
+**[Chaingateway](https://chaingateway.io/)** makes blockchain integrations seamless by providing a powerful and reliable API for:
 - Generating blockchain wallets.
 - Monitoring incoming payments.
 - Sending transactions programmatically.
 
-### Benefits of ChainGateway:
+### Benefits of Chaingateway:
 - **Multi-chain Support**: Supports multiple blockchains including Tron, Ethereum, Binance Smart Chain (BSC), Polygon, and Bitcoin.
 - **Developer-Friendly API**: Intuitive and easy-to-use API with comprehensive documentation.
 - **Secure**: Enterprise-grade security ensures your transactions and wallets are safe.
 
-Explore ChainGateway’s features and get started today:  
-👉 [ChainGateway Developers](https://chaingateway.io/developers)  
+Explore Chaingateway’s features and get started today:  
+👉 [Chaingateway Developers](https://chaingateway.io/developers)  
 👉 [API Documentation](https://chaingateway.io/docs)
 
 ---
 
 ## Disclaimer
 
-This project is a **basic showcase** of how to integrate a payment gateway using Laravel and ChainGateway. While it currently supports **Tron (TRX)** and **USDT (TRC20)**, it can be adapted to work with other blockchains supported by ChainGateway, such as:
+This project is a **basic showcase** of how to integrate a payment gateway using Laravel and Chaingateway. While it currently supports **Tron (TRX)** and **USDT (TRC20)**, it can be adapted to work with other blockchains supported by Chaingateway, such as:
 - **Ethereum**
 - **Polygon**
 - **Binance Smart Chain (BSC)**
@@ -50,7 +50,7 @@ Follow these steps to deploy the project:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/chaingateway/chaingateway-crypto-payment-demo.git
+git clone https://github.com/chaingateway/chaingateway-crypto-payment-demo-laravel.git
 cd laravel-payment-gateway
 ```
 
@@ -89,7 +89,7 @@ CHAINGATEWAY_NETWORK=testnet
 COLD_WALLET=your_cold_wallet_address
 ```
 
-- Replace `your_chaingateway_api_key` with the API key you create on **[ChainGateway](https://app.chaingateway.io/user/api-tokens)**.
+- Replace `your_chaingateway_api_key` with the API key you create on **[Chaingateway](https://app.chaingateway.io/user/api-tokens)**.
 - Set `CHAINGATEWAY_NETWORK` to `mainnet` for production or `testnet` for testing.
 
 ### 4. Run Migrations
@@ -129,7 +129,7 @@ After starting a payment session:
 ### Payment Processing
 
 1. Once a user sends funds to the generated wallet:
-   - The app verifies the transaction using ChainGateway’s webhook.
+   - The app verifies the transaction using Chaingateway’s webhook.
    - Updates the payment session status.
    - Automatically forwards funds to the configured **cold wallet**.
 
@@ -188,8 +188,8 @@ Contributions are welcome! If you’d like to add new features or fix bugs, plea
 
 ---
 
-## About ChainGateway
+## About Chaingateway
 
-ChainGateway is a blockchain API that simplifies blockchain development, making it accessible to developers of all skill levels. Whether you’re building a payment gateway, a decentralized app, or simply need to interact with blockchains, **ChainGateway** provides the tools you need.
+Chaingateway is a blockchain API that simplifies blockchain development, making it accessible to developers of all skill levels. Whether you’re building a payment gateway, a decentralized app, or simply need to interact with blockchains, **Chaingateway** provides the tools you need.
 
 Check it out today at **[chaingateway.io](https://chaingateway.io/)**! 🚀
