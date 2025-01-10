@@ -106,7 +106,7 @@ class PaymentController extends Controller
 
         if ($receiptResponse->successful() && $receiptResponse->json()['data']['status'] == 'SUCCESS') {
             $paymentSession->status = 'Completed';
-            $paymentSession->amount_received = $transactionData['amount'];
+            $paymentSession->received_amount = $transactionData['amount'];
 
             /**
              * you should check if the amount received is the same as the amount requested
