@@ -148,7 +148,7 @@ class PaymentController extends Controller
                 'Content-Type' => 'application/json',
                 'X-Network' => $this->network,
             ])->post($endpoint, [
-                'amount' => $transactionData['reveived_amount'],
+                'amount' => $transactionData['amount'],
                 'privatekey' => $wallet->private_key,
                 'to' => $this->coldWallet,
                 'from' => $transactionData['to'],
