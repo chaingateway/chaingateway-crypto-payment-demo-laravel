@@ -104,7 +104,7 @@ class PaymentController extends Controller
             'X-Network' => $this->network,
         ])->get("{$this->apiUrl}/tron/transactions/{$transactionData['txid']}/decoded");
 
-        if ($receiptResponse->successful() && $receiptResponse->json()['data']['success']) {
+        if ($receiptResponse->successful() && $receiptResponse->json()['data']['status'] == 'SUCCESS') {
             $paymentSession->status = 'Completed';
             $paymentSession->amount_received = $transactionData['amount'];
 
