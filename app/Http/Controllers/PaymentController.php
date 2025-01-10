@@ -128,7 +128,7 @@ class PaymentController extends Controller
                 }
             }
 
-            $paymentSession->contract_address = $transactionData['contractaddress'];
+
             if($paymentSession->currency == 'JST' && $transactionData['contractaddress'] != 'TF17BgPaZYbz8oxbjhriubPDsA7ArKoLX3'){
                 $paymentSession->status = 'Wrong currency received';
             }
