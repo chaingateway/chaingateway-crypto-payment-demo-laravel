@@ -28,13 +28,13 @@ class PaymentController extends Controller
         return view('payment');
     }
 
+    
     /**
      * Start payment session
      * 
      * This Function will create a new wallet address and webhook in Chaingateway.
      * 
      */
-
     public function startPaymentSession(Request $request)
     {
         $response = Http::withHeaders([
@@ -138,7 +138,7 @@ class PaymentController extends Controller
              * You can also send the funds to another wallet or do nothing.
              * In case of TRC20 tokens, you need to ensure you have enough TRX to pay for the transaction fee.
              * You can also use the Chaingateway Tron Paymaster feature so you dont need to handle the fees.
-             */
+             
             $endpoint = $transactionData['contractaddress']
                 ? "{$this->apiUrl}/tron/transactions/trc20"
                 : "{$this->apiUrl}/tron/transactions";
@@ -154,6 +154,7 @@ class PaymentController extends Controller
                 'from' => $transactionData['to'],
                 'contractaddress' => $transactionData['contractaddress'],
             ]);
+            */
         } else {
             $paymentSession->status = 'Failed';
         }

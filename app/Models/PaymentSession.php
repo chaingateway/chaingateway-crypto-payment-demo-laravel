@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PaymentSession extends Model
 {
-    protected $fillable = ['wallet_id', 'status', 'amount'];
+    protected $fillable = ['wallet_id', 'status', 'amount', 'currency', 'received_amount', 'webhook_id'];
 
     public function wallet()
     {
