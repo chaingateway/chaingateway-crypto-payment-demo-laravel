@@ -118,16 +118,19 @@ class PaymentController extends Controller
             $amountDifference = abs($paymentSession->amount - $transactionData['amount']);
             $allowedDifference = $paymentSession->amount * 0.10; // 10% of the payment session amount
 
-            if ($amountDifference <= $allowedDifference) {
+            if ($amountDifference >= $allowedDifference) {
                 // Allow a difference of up to 10%, update the contract address
-                $paymentSession->contract_address = $transactionData['contractaddress'];
-            } else {
                 // If the amount is overpaid or underpaid by more than 10%
                 if ($transactionData['amount'] > $paymentSession->amount) {
                     $paymentSession->status = 'overpaid';
                 } else {
                     $paymentSession->status = 'underpaid';
                 }
+            }
+
+            $paymentSession->contract_address = $transactionData['contractaddress'];
+            if($paymentsession->currency == 'JST' && $transactionData['contractaddress'] != 'TF17BgPaZYbz8oxbjhriubPDsA7ArKoLX3'){
+                $paymentSession->status = 'Wrong currency received';
             }
 
             /**
@@ -145,7 +148,7 @@ class PaymentController extends Controller
                 'Content-Type' => 'application/json',
                 'X-Network' => $this->network,
             ])->post($endpoint, [
-                'amount' => $transactionData['amount'],
+                'amount' => $transactionData['reveived_amount'],
                 'privatekey' => $wallet->private_key,
                 'to' => $this->coldWallet,
                 'from' => $transactionData['to'],

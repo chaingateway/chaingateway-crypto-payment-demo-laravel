@@ -13,7 +13,7 @@
         <label for="currency">Currency:</label>
         <select name="currency" id="currency" required>
             <option value="TRX">TRX</option>
-            <option value="USDT">USDT</option>
+            <option value="JST">JST (TRC20)</option>
         </select>
         <br>
         <button type="submit">Start Payment Session</button>
