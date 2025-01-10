@@ -102,7 +102,7 @@ class PaymentController extends Controller
             'Authorization' => "Bearer {$this->apiKey}",
             'Content-Type' => 'application/json',
             'X-Network' => $this->network,
-        ])->get("{$this->apiUrl}/tron/transactions/{$transactionData['txid']}/decoded");
+        ])->get("{$this->apiUrl}/tron/transactions/{$transactionData['txid']}/receipt/decoded");
 
         if ($receiptResponse->successful() && $receiptResponse->json()['data']['status'] == 'SUCCESS') {
             $paymentSession->status = 'Completed';
